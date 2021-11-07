@@ -15,10 +15,11 @@ function maxLengthCheck(self){
     self.value = self.value.slice(0, self.maxLength);
   }
 }
-
-jQuery.get('history.txt', function(data) {
+function historyLoad(){
+  jQuery.get('history.txt', function(data) {
     document.getElementById("historyWindow").innerText = data;
-});
+  });
+}
 
 
 
