@@ -10,3 +10,8 @@ body{
 #historyWrite{
   margin-top: 5px;
 }
+
+#historyWindow{
+  font-weight: bold;
+  
+}

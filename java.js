@@ -5,7 +5,7 @@ function SearchingFunc(){
   var shuttle = shuttleType.value + "-" + shuttleNumber.value;
   var shutDisp = document.getElementById("shuttleDisp");
 
-  alert(shuttle);
+  alert("대차번호 "+shuttle+" 선택되었습니다.");
   shutDisp.innerText = shuttle;
 }
 
@@ -19,23 +19,5 @@ function historyLoad(){
   jQuery.get('history.txt', function(data) {
     document.getElementById("historyWindow").innerText = data;
   });
+  jQuery.
 }
-
-
-
-// function historyLoad(){
-//     var input = document.createElement("input");
-//     input.type = "file";
-//     input.accept = "text/plain"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
-//     input.onchange = function (event) {
-//         processFile(event.target.files[0]);
-//     };
-//     input.click();
-// }
-// function processFile(file) {
-//     var reader = new FileReader();
-//     reader.onload = function () {
-//         historyWindow.innerText = reader.result;
-//     };
-//     reader.readAsText(file, /* optional */ "euc-kr");
-// }
