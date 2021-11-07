@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>51# History System</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="이미지경로.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+    <!-- <script src=“https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js”></script> -->
+</head>
+
+<body>
+  <h1>
+    51의장 대차헹거 이상이력 조회
+  </h1>
+
+  <div id="searchbar">
+    <span>
+      <select class="menu" style="width:50px; height:30px;">
+        <optgroup label="도어장착기 헹거">
+          <option value="LH">LH</option>
+          <option value="RH">RH</option>
+        </optgroup>
+        <optgroup label="자동화 대차">
+          <option value="F">F</option>
+        </optgroup>
+      </select>
+      -
+    </span>
+
+    <span>
+      <input type="number" class="number" maxlength="3" placeholder="번호입력" style="width:100px; height:30px;"
+        oninput="maxLengthCheck(this)">
+    </span>
+
+    <span>
+      <button type="button" name="Search" onclick="SearchingFunc();">검색</button>
+    </span>
+
+    <span>
+      <button type="button" name="fullHistory" onclick="historyLoad();">전체이력</button>
+    </span>
+  </div>
+
+  <p id="shuttleDisp" style="margin-top:5px; margin-bottom:5px;">대차번호를 입력해주세요</p>
+
+  <div id="historyWrite">
+    <input type="text" name="Problem" placeholder="이상내용을 입력해주세요!" style="width:250px; height:30px;">
+    <button type="button" name="입력">입력</button>
+  </div>
+
+  <p id="historyWindow" style="margin-top:5px; margin-bottom:5px;">No history</p>
+
+  <!-- <iframe src="history.txt"></iframe> -->
+
+  <!--
+  <div>
+    <object data="history.txt" width="300" height="200"></object>
+  </div>
+  -->
+
+</body>
+</html>
