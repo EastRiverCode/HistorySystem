@@ -4,10 +4,13 @@ function SearchingFunc(){
   var shuttleNumber = document.getElementsByClassName("number")[0];
   var shuttle = shuttleType.value + "-" + shuttleNumber.value;
   var shutDisp = document.getElementById("shuttleDisp");
-  var conf
+
 
   if(shutDisp.innerText == shuttle){
-    alert("이미 선택된 대차입니다. "+shuttle);
+    alert("이미 대차번호가 "+shuttle+" 입니다.");
+  }
+  else if(shuttleNumber.value < 0){
+    alert("올바른 번호를 입력하세요.");
   }
   else{
     shutDisp.innerText = shuttle;
@@ -16,7 +19,7 @@ function SearchingFunc(){
 }
 
 function maxLengthCheck(self){
-  if (self.value.length > self.maxLength){
+  if(self.value.length > self.maxLength){
     //object.maxLength : 매게변수 오브젝트의 maxlength 속성 값입니다.
     self.value = self.value.slice(0, self.maxLength);
   }
@@ -26,3 +29,8 @@ function historyLoad(){
     document.getElementById("historyWindow").innerText = data;
   });
 }
+
+$("historyTable").DataTable({
+  ajax: {url:"history.json", dataSrc:''},
+  columns:[{data:"date"},{data:"shuttle"},{data:"content"}]
+});
