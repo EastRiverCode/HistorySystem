@@ -30,7 +30,7 @@ function historyLoad(){
   });
 }
 
-$("historyTable").DataTable({
+$("#historyTable").DataTable({
   ajax: {url:"history.json", dataSrc:''},
   columns:[{data:"date"},{data:"shuttle"},{data:"content"}]
 });
