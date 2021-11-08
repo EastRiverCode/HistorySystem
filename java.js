@@ -19,5 +19,4 @@ function historyLoad(){
   jQuery.get('history.txt', function(data) {
     document.getElementById("historyWindow").innerText = data;
   });
-  jQuery.
 }
